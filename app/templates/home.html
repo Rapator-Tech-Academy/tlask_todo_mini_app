@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+<ul>
+    {% for task in tasks %}
+        <li>{{task.header}} - {{task.body}}</li>
+    {% endfor %}
+</ul>
+
+</div>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <div>
+        {{form.header.label }}
+        {{form.header(size=140)}}
+    </div>
+    <div>
+        {{form.body.label }}
+        {{form.body}}
+    </div>
+    <div>
+        {{form.done.label }}
+        {{form.done }}
+    </div>
+    <div>
+        {{form.submit}}
+    </div>
+</form>
+{% endblock %}
